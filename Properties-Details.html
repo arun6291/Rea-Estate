@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Property Detail Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-      <div class="flex items-center space-x-8">
+    <!--Header Social Icons Begin-->
+
+    <div class="relative bg-white">
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-8">
                     <div class="flex items-center space-x-2">
                         <i class="fa-solid fa-envelope text-orange-500"></i>
                         <span class="text-[12px] lowercase">info@company.com</span>
@@ -17,5 +27,335 @@
                     </div>
                 </div>
 
+                <!-- Flyout menus -->
+                <div class="ml-auto flex items-center">
+                    <!-- Header Social Icons -->
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header class="bg-white">
+        <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <h5 class="text-1xl font-bold tracking-tight sm:text-2xl">VILLA</h5>
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                        aria-hidden="true" class="size-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <el-popover-group class="hidden lg:flex lg:gap-x-12">
+               <a href="Home.html" class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Home</a>
+                <a href="Properties.html"
+                    class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Properties</a>
+                <a href="Properties-Details.html" class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Property
+                    Details</a>
+                <a href="Contact-Us.html" class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Contact
+                    Us</a>
+                <div class="">
+                    <button type="button"
+                        class="text-orange-400 bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2 text-center me-2 mb-2 dark:bg-blue-400 dark:hover:bg-blue-400 dark:focus:ring-blue-800">Schedule
+                        a visit</button>
+                </div>
+            </el-popover-group>
+        </nav>
+        <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                    <el-dialog-panel
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <button type="button" command="close" commandfor="mobile-menu"
+                                class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <a href="Home.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                                    <a href="Properties.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Properties</a>
+                                    <a href="#"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Property
+                                        Details</a>
+                                    <a href="Contact-Us.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact
+                                        Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </dialog>
+        </el-dialog>
+    </header>
+
+    <!--Home Banner Section Begin-->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-24">
+        <img src="./src/images/page-heading-bg.jpg" alt="" class="absolute inset-0 -z-10 size-full object-cover" />
+        <h2 class="text-center text-white text-3xl font-bold py-2">SINGLE PROPERTIES</h2>
+    </div>
+
+    <div class="bg-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <dl class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+                <div class="relative">
+                    <dt class="text-base/7 font-semibold text-gray-900">
+                        <img src="./src/images/single-property.jpg" alt="" class="" />
+                    </dt>
+                    <div class="py-10">
+                        <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium w-30">
+                            <a href="#">
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Basic Tee
+                            </a>
+                        </h3>
+                        <div class="px-1 py-6">
+                            <h6 class="text-2xl font-bold">Extra Info About Property</h6>
+                        </div>
+                        <div class="mt-2 max-w-lg text-sm/6 text-gray-600 pt-1 sm:pt-2">
+                            <p class="py-1">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio laboriosam quae
+                                unde illum.
+                                Similique rem accusamus nemo neque labore natus, dolore pariatur itaque illum facere
+                                magni
+                                temporibus odio quis.
+                            </p>
+                            <p class="py-1">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio laboriosam quae
+                                unde illum.
+                                Similique rem accusamus nemo neque labore natus, dolore pariatur itaque illum facere
+                                magni
+                                temporibus odio quis.
+                            </p>
+                        </div>
+
+                        <div class="mt-2 max-w-lg text-sm/6 text-gray-600 pt-5 sm:pt-10">
+                            <a class="text-orange-500 pt-8 sm:pt-10" href="#">Best useful links ?</a>
+                            <p>
+                                Get <strong> the best villa</strong> website template in HTML CSS and Bootstrap for your
+                                business.
+                                Yz provides you the <a href="http://"> best service </a>in the world. Please tell your
+                                friends about it.
+                            </p>
+                            <p class="py-3 font-bold">How does this work ?</p>
+                            <p class="py-3 font-bold">Why is Villa Agency the best ?</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="relative">
+                    <div
+                        class="relative lg:row-span-2 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                        <div class="relative flex flex-col overflow-hidden py-1 pb-8">
+                            <div class="relative flex gap-x-4 justify-self-end px-8 pb-3 sm:px-10 sm:pt-2 sm:pb-0">
+                                <img src="./src/images/info-icon-01.png" alt="" class="bg-gray-50 size-10" />
+                                <div class="text-sm/6">
+                                    <p class="font-bold text-gray-900">
+                                        <span class="absolute inset-0"></span>
+                                        Michael Foster
+                                    </p>
+                                    <p class="text-gray-600">Co-Founder / CTO</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative flex flex-col overflow-hidden py-1 pb-8">
+                            <div
+                                class="relative flex items-center gap-x-4 justify-self-end px-8 pb-3 sm:px-10 sm:pt-2 sm:pb-0">
+                                <img src="./src/images/info-icon-01.png" alt="" class="bg-gray-50 size-10" />
+                                <div class="text-sm/6">
+                                    <p class="font-bold text-gray-900">
+                                        <span class="absolute inset-0"></span>
+                                        Michael Foster
+                                    </p>
+                                    <p class="text-gray-600">Co-Founder / CTO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col overflow-hidden py-1 pb-8">
+                            <div
+                                class="relative flex items-center gap-x-4 justify-self-end px-8 pb-3 sm:px-10 sm:pt-2 sm:pb-0">
+                                <img src="./src/images/info-icon-01.png" alt="" class="bg-gray-50 size-10" />
+                                <div class="text-sm/6">
+                                    <p class="font-bold text-gray-900">
+                                        <span class="absolute inset-0"></span>
+                                        Michael Foster
+                                    </p>
+                                    <p class="text-gray-600">Co-Founder / CTO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col overflow-hidden py-1 pb-8">
+                            <div
+                                class="relative flex items-center gap-x-4 justify-self-end px-8 pb-3 sm:px-10 sm:pt-2 sm:pb-0">
+                                <img src="./src/images/info-icon-01.png" alt="" class="bg-gray-50 size-10" />
+                                <div class="text-sm/6">
+                                    <p class="font-bold text-gray-900">
+                                        <span class="absolute inset-0"></span>
+                                        Michael Foster
+                                    </p>
+                                    <p class="text-gray-600">Co-Founder / CTO</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dl>
+        </div>
+    </div>
+
+    <!--Tab Section Begin-->
+    <div class="lg:flex lg:items-center lg:justify-between mx-auto max-w-7xl px-12 lg:px-12 xl:pt-8 sm:pt-8">
+        <div class="min-w-0 flex-1">
+            <p class="mt-2 text-lg pb-3 text-red-600 font-semibold tracking-tight text-gray-950 max-lg: text-sm ...">
+                BEST DEAL</p>
+            <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+                Find Your Best Deal
+            </h2>
+            <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+                Right Now!
+            </h2>
+        </div>
+
+        <div class="mt-5 flex lg:mt-0 lg:ml-4">
+
+            <span class="sm:ml-3">
+                <button type="button"
+                    class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-orange-400 hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+                    Appartment
+                </button>
+            </span>
+
+            <span class="sm:ml-3">
+                <button type="button"
+                    class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+
+                    Villa House
+                </button>
+            </span>
+
+            <span class="sm:ml-3">
+                <button type="button"
+                    class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+
+                    Penthouse
+                </button>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <div class="mt-6 grid gap-1 sm:mt-10 lg:grid-cols-3 lg:grid-rows-1">
+
+            <div
+                class="relative lg:row-span-2 w-90 rounded-xl bg-white px-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                <div class="flex min-w-0 text-right py-3">
+                    <p class="mt-1 truncate text-xs/5 text-gray-500">Total Flat Space</p>
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm/6 font-bold text-gray-900">185 m2r</p>
+                    </div>
+                </div>
+
+                <div class="flex min-w-0 text-right py-3">
+                    <p class="mt-1 truncate text-xs/5 text-gray-500">Floor number</p>
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm/6 font-bold text-gray-900">26th</p>
+                    </div>
+                </div>
+
+                <div class="flex min-w-0 text-right py-3">
+                    <p class="mt-1 truncate text-xs/5 text-gray-500">Number of rooms </p>
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm/6 font-bold text-gray-900">4</p>
+                    </div>
+                </div>
+
+                <div class="flex min-w-0 text-right py-3">
+                    <p class="mt-1 truncate text-xs/5 text-gray-500">Parking Available </p>
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm/6 font-bold text-gray-900">Yes</p>
+                    </div>
+                </div>
+
+                <div class="flex min-w-0 text-right py-3">
+                    <p class="mt-1 truncate text-xs/5 text-gray-500">Payment Process </p>
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm/6 font-bold text-gray-900">Bank</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="./src/images/property-05.jpg" alt="" class="" />
+            </div>
+
+
+            <div class="">
+                <div
+                    class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+                    <div class="px-1">
+                        <h6 class="text-1xl font-bold">Extra Info About Property</h6>
+                    </div>
+                    <div class="mt-2 max-w-lg text-sm/6 text-gray-600 pt-1 sm:pt-2">
+                        <p class="py-1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur neque voluptas quae
+                            incidunt minus doloribus laborum cupiditate optio vero.
+                        </p>
+                        <p class="py-1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur neque voluptas quae
+                            incidunt minus doloribus laborum cupiditate optio vero.
+                        </p>
+                    </div> 
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Footer Section Begin--> 
+    <footer class="bg-black dark:bg-gray-800 mt-10">
+        <div class="w-full text-center mx-auto max-w-screen-xl p-4">
+            <p class="text-sm text-gray-500 text-centersm:text-center dark:text-gray-400">Copyright © 2023 <a
+                    href="./Home.html" class="hover:underline">villa Agency Co.Ltd</a>. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -1,12 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-    
-    
+
+    <!--Header Social Icons Begin-->
+
+    <div class="relative bg-white">
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-orange-500"></i>
+                        <span class="text-[12px] lowercase">info@company.com</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-map-marker-alt text-orange-500"></i>
+                        <span class="text-[12px] lowercase">san francisco, ca</span>
+                    </div>
+                </div>
+
+                <!-- Flyout menus -->
+                <div class="ml-auto flex items-center">
+                    <!-- Header Social Icons -->
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header class="bg-white">
+        <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <h5 class="text-1xl font-bold tracking-tight sm:text-2xl">VILLA</h5>
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                        aria-hidden="true" class="size-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <el-popover-group class="hidden lg:flex lg:gap-x-12">
+                <a href="Home.html"
+                    class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Home</a>
+                <a href="Properties.html"
+                    class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Properties</a>
+                <a href="Properties-Details.html"
+                    class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Property
+                    Details</a>
+                <a href="Contact-Us.html"
+                    class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Contact
+                    Us</a>
+                <div class="">
+                    <button type="button"
+                        class="text-orange-400 bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2 text-center me-2 mb-2 dark:bg-blue-400 dark:hover:bg-blue-400 dark:focus:ring-blue-800">Schedule
+                        a visit</button>
+                </div>
+            </el-popover-group>
+        </nav>
+        <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                    <el-dialog-panel
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <button type="button" command="close" commandfor="mobile-menu"
+                                class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <a href="Home.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                                    <a href="Properties.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Properties</a>
+                                    <a href="Properties-Details.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Property
+                                        Details</a>
+                                    <a href="#"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact
+                                        Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </dialog>
+        </el-dialog>
+    </header>
+
+    <!--Home Banner Section Begin-->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-24">
+        <img src="./src/images/page-heading-bg.jpg" alt="" class="absolute inset-0 -z-10 size-full object-cover" />
+        <h2 class="text-center text-white text-3xl font-bold py-2">CONTACT US</h2>
+    </div>
+
+    <!--GEt In Touch Section Begin-->
+    <div class="bg-white">
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-16 py-10">
+            <dl class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+                <div class="relative">
+
+                    <div class="min-w-0 flex-1">
+                        <p
+                            class="mt-2 text-lg pb-3 text-red-600 font-semibold tracking-tight text-gray-950 max-lg: text-sm ...">
+                            CONTACT US</p>
+                        <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+                            Find Your Best Deal
+                        </h2>
+                        <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+                            Right Now!
+                        </h2>
+                        <p class="text-gray-600 py-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+                            beatae eveniet est dolorem delectus consequatur vitae aliquid, rerum suscipit asperiores
+                            corrupti fugiat dignissimos minus cumque omnis. Earum culpa dolorum aliquam.</p>
+                    </div>
+
+                    <div class="bg-white">
+                        <div class="mx-auto max-w-7xl">
+
+                            <div class="mx-auto mt-16 max-w-2xl lg:max-w-4xl">
+                                <div class="relative pl-16">
+                                    <div class="mt-10">
+                                        <dt class="text-base/7 font-semibold text-gray-900">
+                                            <div class="absolute top-0 left-0 flex size-10 items-center">
+                                                <img src="./src/images/phone-icon.png" alt="" />
+                                            </div>
+                                        </dt>
+                                        <dd class="text-base/7 text-gray-600">
+                                            <p class="font-semibold text-gray-900">
+                                                <a href="#">
+                                                    <span class="absolute inset-0"></span>
+                                                    Michael Foster
+                                                </a>
+                                            </p>
+                                            <p class="text-gray-600">Co-Founder / CTO</p>
+                                        </dd>
+                                    </div>
+                                </div>
+                                <div class="relative pl-16">
+                                    <div class="mt-10">
+                                    </div>
+                                    <dt class="text-base/7 font-semibold text-gray-900">
+                                        <div class="absolute top-0 left-0 flex size-10 items-center">
+                                            <img src="./src/images/email-icon.png" alt="" />
+                                        </div>
+                                    </dt>
+                                    <dd class="text-base/7 text-gray-600">
+                                        <p class="font-semibold text-gray-900">
+                                            <a href="#">
+                                                <span class="absolute inset-0"></span>
+                                                Michael Foster
+                                            </a>
+                                        </p>
+                                        <p class="text-gray-600">Co-Founder / CTO</p>
+                                    </dd>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="relative pl">
+                    <form>
+                        <div class="space-y-12">
+                            <div class="border-b border-gray-900/10 pb-12 bg-white p-4 rounded-lg">
+                                <h2 class="text-base/7 font-semibold text-gray-900">Personal Information</h2>
+                                <p class="mt-1 text-sm/6 text-gray-600">Use a permanent address where you can
+                                    receive mail.</p>
+
+                                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                                    <div class="sm:col-span-3">
+                                        <label for="first-name" class="block text-sm/6 font-medium text-gray-900">First
+                                            name</label>
+                                        <div class="mt-2">
+                                            <input id="first-name" type="text" name="first-name"
+                                                autocomplete="given-name"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-3">
+                                        <label for="last-name" class="block text-sm/6 font-medium text-gray-900">Last
+                                            name</label>
+                                        <div class="mt-2">
+                                            <input id="last-name" type="text" name="last-name"
+                                                autocomplete="family-name"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-4">
+                                        <label for="email" class="block text-sm/6 font-medium text-gray-900">Email
+                                            address</label>
+                                        <div class="mt-2">
+                                            <input id="email" type="email" name="email" autocomplete="email"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-span-full">
+                                        <label for="street-address"
+                                            class="block text-sm/6 font-medium text-gray-900">Street
+                                            address</label>
+                                        <div class="mt-2">
+                                            <input id="street-address" type="text" name="street-address"
+                                                autocomplete="street-address"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-2 sm:col-start-1">
+                                        <label for="city" class="block text-sm/6 font-medium text-gray-900">City</label>
+                                        <div class="mt-2">
+                                            <input id="city" type="text" name="city" autocomplete="address-level2"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-2">
+                                        <label for="region" class="block text-sm/6 font-medium text-gray-900">State
+                                            /
+                                            Province</label>
+                                        <div class="mt-2">
+                                            <input id="region" type="text" name="region" autocomplete="address-level1"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-2">
+                                        <label for="postal-code" class="block text-sm/6 font-medium text-gray-900">ZIP /
+                                            Postal
+                                            code</label>
+                                        <div class="mt-2">
+                                            <input id="postal-code" type="text" name="postal-code"
+                                                autocomplete="postal-code"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="btn mt-6">
+                            <button type="button"
+                                class="text-orange-400 bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2 text-center me-2 mb-2 dark:bg-blue-400 dark:hover:bg-blue-400 dark:focus:ring-blue-800">Schedule
+                                a visit</button>
+                        </div> 
+                    </form>
+
+                </div>
+            </dl>
+        </div>
+    </div>
+
+    </div>
+
 </body>
+
 </html>

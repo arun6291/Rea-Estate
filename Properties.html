@@ -1,11 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Properties Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-    
+    <!--Header Social Icons Begin-->
+
+    <div class="relative bg-white">
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-orange-500"></i>
+                        <span class="text-[12px] lowercase">info@company.com</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-map-marker-alt text-orange-500"></i>
+                        <span class="text-[12px] lowercase">san francisco, ca</span>
+                    </div>
+                </div>
+
+                <!-- Flyout menus -->
+                <div class="ml-auto flex items-center">
+                    <!-- Header Social Icons -->
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="flex lg:ml-6">
+                        <a href="#" class="p-1 text-gray-400 hover:text-gray-500">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header class="bg-white">
+        <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <h5 class="text-1xl font-bold tracking-tight sm:text-2xl">VILLA</h5>
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                        aria-hidden="true" class="size-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <el-popover-group class="hidden lg:flex lg:gap-x-12">
+                <a href="Home.html" class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Home</a>
+                <a href="Properties.html"
+                    class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Properties</a>
+                <a href="Properties-Details.html" class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Property
+                    Details</a>
+                <a href="Contact-Us.html" class="text-sm/6 hover:text-orange-400 transition font-semibold text-gray-900 p-2">Contact
+                    Us</a>
+                <div class="">
+                    <button type="button"
+                        class="text-orange-400 bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2 text-center me-2 mb-2 dark:bg-blue-400 dark:hover:bg-blue-400 dark:focus:ring-blue-800">Schedule
+                        a visit</button>
+                </div>
+            </el-popover-group>
+        </nav>
+        <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                    <el-dialog-panel
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <button type="button" command="close" commandfor="mobile-menu"
+                                class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <a href="Home.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                                    <a href="#"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Properties</a>
+                                    <a href="Properties-Details.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Property
+                                        Details</a>
+                                    <a href="Contact-Us.html"
+                                        class="-mx-3 block hover:bg-orange-400 hover:text-white rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact
+                                        Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </dialog>
+        </el-dialog>
+    </header>
+
+    <!--Home Banner Section Begin-->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-24">
+        <img src="./src/images/page-heading-bg.jpg" alt="" class="absolute inset-0 -z-10 size-full object-cover" />
+        <h2 class="text-center text-white text-3xl font-bold py-2">PROPERTIES</h2>
+    </div>
+
+    <div class="py-10 sm:py-10 mt-6 text-center">
+
+        <span class="sm:ml-3">
+            <button type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-orange-400 hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+                Show All
+            </button>
+        </span>
+
+        <span class="sm:ml-3">
+            <button type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+
+                Apartment
+            </button>
+        </span>
+
+        <span class="sm:ml-3">
+            <button type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+
+                villa House
+            </button>
+        </span>
+
+        <span class="sm:ml-3">
+            <button type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-semibold text-white shadow-xs bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 font-medium">
+
+                Penthouse
+            </button>
+        </span>
+
+    </div>
+
+    <!--Product Overview begin-->
+    <div class="bg-white">
+        <div class="mx-auto max-w-2xl px-8 py-6 sm:px-8 sm:py-6 lg:max-w-7xl lg:px-8">
+
+            <div class="mt-3 grid grid-cols-1 gap-x-9 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-20">
+                <div class="group relative">
+                    <img src="./src/images/property-01.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-02.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-03.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-04.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-05.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-06.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-03.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <img src="./src/images/property-02.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <img src="./src/images/property-04.jpg" alt="Front of men&#039;s Basic Tee in black."
+                        class="rounded-md" />
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700 rounded-md bg-red-100 p-1 px-3 font-medium">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Basic Tee
+                                </a>
+                            </h3>
+                        </div>
+                        <h5 class="text-lg font-bold text-orange-500">$2,226,000</h5>
+                    </div>
+                    <div class="text">
+                        <h6 class="text-1xl font-bold py-2">18 New Street Miami, OR 97219</h6>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3">Bedrooms: <strong>8</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Bedrooms: <strong>8</strong> </span></p>
+                    </div>
+                    <div class="rooms">
+                        <p class="mt-1 text-sm text-gray-500"> Area: <strong> 545m2 </strong> <span
+                                class="mt-1 text-sm text-gray-500 ml-3 mr-3"> Floor: <strong>3</strong> </span> <span
+                                class="mt-1 text-sm text-gray-500">Parking: <strong>6 spots</strong> </span></p>
+                    </div>
+                    <div class="mx-auto mt-2 max-w-lg text-center sm:text-5xl">
+                        <button type="button"
+                            class="text-white bg-black hover:bg-orange-400 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-sm rounded-full text-sm px-5 py-2 text-center me-2 mb-2">Schedule
+                            a visit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Footer Section Begin--> 
+    <footer class="bg-black dark:bg-gray-800 mt-10">
+        <div class="w-full text-center mx-auto max-w-screen-xl p-4">
+            <p class="text-sm text-gray-500 text-centersm:text-center dark:text-gray-400">Copyright © 2023 <a
+                    href="./Home.html" class="hover:underline">villa Agency Co.Ltd</a>. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
 </body>
+
 </html>
